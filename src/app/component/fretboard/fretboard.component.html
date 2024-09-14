@@ -1,2 +1,11 @@
-<p>fretboard works!</p>
- 
+<div class="fretboard">
+    <div *ngFor="let row of rows; let rowIndex = index" class="row">
+      <div *ngFor="let column of columns; let colIndex = index" 
+           class="note" 
+           [class.active]="isActive(rowIndex, colIndex)"
+           (click)="toggleNoteState(rowIndex, colIndex)">
+        <div class="dot" [class.active]="isActive(rowIndex, colIndex)"></div>
+      </div>
+    </div>
+  </div>
+  
